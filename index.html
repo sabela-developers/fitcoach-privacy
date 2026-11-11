@@ -8,15 +8,18 @@
   body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; line-height: 1.6; color: #1c1c1e; }
   h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; margin-top: 1.75rem; }
   strong { font-weight: 650; } a { color: #2563eb; }
+  .lang { float: right; font-size: .85rem; padding: .3rem .5rem; border: 1px solid #ccc; border-radius: .5rem; }
 </style>
 </head>
 <body>
-<h1>Política de privacidad — FitCoach</h1>
+<select id="langSel" class="lang" aria-label="Language"></select>
+<div id="c"></div>
+<script>
+const T = {
+es: `<h1>Política de privacidad — FitCoach</h1>
 <p><em>Última actualización: noviembre de 2026</em></p>
-
 <h2>Resumen</h2>
 <p>FitCoach es una app de entrenamiento <strong>local primero</strong>: tu perfil, planes, historial y preferencias se guardan <strong>solo en tu dispositivo</strong> (IndexedDB). No hay servidores propios, ni cuentas, ni analítica, ni publicidad.</p>
-
 <h2>Datos almacenados (locales)</h2>
 <ul>
 <li><strong>Perfil:</strong> edad, sexo, altura, peso, objetivo, nivel, días de entrenamiento, equipamiento, lesiones.</li>
@@ -24,22 +27,246 @@
 <li><strong>Historial:</strong> sesiones, marcas personales, estadísticas.</li>
 <li><strong>Preferencias:</strong> idioma, tema, unidades, consentimientos.</li>
 </ul>
-
 <h2>Servicios de terceros</h2>
 <p><strong>Proveedores de IA (opcional):</strong> si configuras una clave de API (OpenRouter o GLM), la app envía al proveedor elegido un contexto mínimo: objetivo, nivel, días y equipamiento; el historial y las lesiones solo se incluyen si activas el consentimiento explícito en Ajustes. Las claves se guardan localmente.</p>
 <p><strong>YouTube (bajo demanda):</strong> las fichas de ejercicio pueden reproducir vídeos de técnica mediante youtube-nocookie.com y la YouTube Data API. Solo se realiza la petición cuando abres la ficha y pulsas reproducir.</p>
 <p><strong>Catálogo de ejercicios:</strong> los datos y animaciones proceden de ExerciseDB OSS (AscendAPI) y los vídeos de técnica incluidos localmente proceden de free-exercise-db-api (licencia MIT). La app no envía tus datos a ninguno de estos servicios.</p>
-
 <h2>Analítica y rastreo</h2>
 <p><strong>Ninguno.</strong> Sin SDKs de analítica, publicidad ni rastreadores.</p>
-
 <h2>Copias de seguridad</h2>
 <p>La exportación e importación de datos se hace mediante ficheros que tú generas y controlas. La app no sube nada a la nube.</p>
-
 <h2>Eliminación</h2>
 <p>Borra tus datos desde Ajustes o desinstalando la app. Al no existir servidores, la eliminación es completa e inmediata.</p>
-
 <h2>Cambios y contacto</h2>
-<p>Los cambios se publicarán en esta página y en el repositorio del proyecto. Para consultas, abre un issue en el repositorio.</p>
+<p>Los cambios se publicarán en esta página y en el repositorio del proyecto. Para consultas, abre un issue en el repositorio.</p>`,
+en: `<h1>Privacy Policy — FitCoach</h1>
+<p><em>Last updated: November 2026</em></p>
+<h2>Summary</h2>
+<p>FitCoach is a <strong>local-first</strong> training app: your profile, plans, history and preferences are stored <strong>only on your device</strong> (IndexedDB). No servers, no accounts, no analytics, no ads.</p>
+<h2>Stored data (local)</h2>
+<ul>
+<li><strong>Profile:</strong> age, sex, height, weight, goal, level, training days, equipment, injuries.</li>
+<li><strong>Plans & exercises:</strong> sets, reps, rest times.</li>
+<li><strong>History:</strong> sessions, personal records, statistics.</li>
+<li><strong>Preferences:</strong> language, theme, units, consents.</li>
+</ul>
+<h2>Third-party services</h2>
+<p><strong>AI providers (optional):</strong> if you configure an API key (OpenRouter or GLM), the app sends the chosen provider a minimal context: goal, level, days and equipment; history and injuries are only included if you enable explicit consent in Settings. Keys are stored locally.</p>
+<p><strong>YouTube (on demand):</strong> exercise sheets can play technique videos via youtube-nocookie.com and the YouTube Data API. A request is only made when you open a sheet and press play.</p>
+<p><strong>Exercise catalog:</strong> data and animations come from ExerciseDB OSS (AscendAPI) and locally bundled technique videos come from free-exercise-db-api (MIT license). The app sends no data to these services.</p>
+<h2>Analytics & tracking</h2>
+<p><strong>None.</strong> No analytics, advertising or tracking SDKs.</p>
+<h2>Backups</h2>
+<p>Data export/import uses files you generate and control. The app uploads nothing to the cloud.</p>
+<h2>Deletion</h2>
+<p>Delete your data in Settings or by uninstalling the app. With no servers, deletion is complete and immediate.</p>
+<h2>Changes & contact</h2>
+<p>Changes will be published on this page and in the project repository. For questions, open an issue in the repository.</p>`,
+de: `<h1>Datenschutzrichtlinie — FitCoach</h1>
+<p><em>Zuletzt aktualisiert: November 2026</em></p>
+<h2>Zusammenfassung</h2>
+<p>FitCoach ist eine <strong>lokal-first</strong> Trainings-App: Profil, Pläne, Verlauf und Einstellungen werden <strong>nur auf deinem Gerät</strong> gespeichert (IndexedDB). Keine Server, keine Konten, kein Tracking, keine Werbung.</p>
+<h2>Gespeicherte Daten (lokal)</h2>
+<ul>
+<li><strong>Profil:</strong> Alter, Geschlecht, Größe, Gewicht, Ziel, Level, Trainingstage, Ausrüstung, Verletzungen.</li>
+<li><strong>Pläne & Übungen:</strong> Sätze, Wiederholungen, Pausen.</li>
+<li><strong>Verlauf:</strong> Einheiten, persönliche Rekorde, Statistiken.</li>
+<li><strong>Einstellungen:</strong> Sprache, Design, Einheiten, Einwilligungen.</li>
+</ul>
+<h2>Drittanbieter</h2>
+<p><strong>KI-Anbieter (optional):</strong> Wenn du einen API-Schlüssel (OpenRouter oder GLM) konfigurierst, sendet die App dem gewählten Anbieter nur einen minimalen Kontext: Ziel, Level, Tage und Ausrüstung; Verlauf und Verletzungen werden nur mit deiner ausdrücklichen Einwilligung in den Einstellungen gesendet. Schlüssel werden lokal gespeichert.</p>
+<p><strong>YouTube (auf Abruf):</strong> Übungsblätter können Technikvideos über youtube-nocookie.com und die YouTube Data API abspielen. Eine Anfrage erfolgt nur, wenn du ein Blatt öffnest und auf Abspielen tippst.</p>
+<p><strong>Übungskatalog:</strong> Daten und Animationen stammen von ExerciseDB OSS (AscendAPI), lokal gebündelte Technikvideos von free-exercise-db-api (MIT-Lizenz). Die App sendet keine Daten an diese Dienste.</p>
+<h2>Analysen & Tracking</h2>
+<p><strong>Keine.</strong> Keine Analyse-, Werbe- oder Tracking-SDKs.</p>
+<h2>Backups</h2>
+<p>Export und Import erfolgen über Dateien, die du erstellst und kontrollierst. Die App lädt nichts in die Cloud.</p>
+<h2>Löschung</h2>
+<p>Daten in den Einstellungen oder durch Deinstallation löschen. Ohne Server ist die Löschung vollständig und sofortig.</p>
+<h2>Änderungen & Kontakt</h2>
+<p>Änderungen werden auf dieser Seite und im Projekt-Repository veröffentlicht. Bei Fragen öffne ein Issue im Repository.</p>`,
+fr: `<h1>Politique de confidentialité — FitCoach</h1>
+<p><em>Dernière mise à jour : novembre 2026</em></p>
+<h2>Résumé</h2>
+<p>FitCoach est une app d'entraînement <strong>local-first</strong> : profil, plans, historique et préférences sont stockés <strong>uniquement sur votre appareil</strong> (IndexedDB). Pas de serveurs, pas de comptes, pas d'analytics, pas de publicité.</p>
+<h2>Données stockées (locales)</h2>
+<ul>
+<li><strong>Profil :</strong> âge, sexe, taille, poids, objectif, niveau, jours d'entraînement, équipement, blessures.</li>
+<li><strong>Plans et exercices :</strong> séries, répétitions, repos.</li>
+<li><strong>Historique :</strong> séances, records personnels, statistiques.</li>
+<li><strong>Préférences :</strong> langue, thème, unités, consentements.</li>
+</ul>
+<h2>Services tiers</h2>
+<p><strong>Fournisseurs d'IA (optionnel) :</strong> si vous configurez une clé API (OpenRouter ou GLM), l'app envoie au fournisseur choisi un contexte minimal : objectif, niveau, jours et équipement ; l'historique et les blessures ne sont inclus qu'avec votre consentement explicite dans les Réglages. Les clés sont stockées localement.</p>
+<p><strong>YouTube (à la demande) :</strong> les fiches d'exercices peuvent lire des vidéos de technique via youtube-nocookie.com et l'API YouTube Data. Une requête n'est émise que lorsque vous ouvrez une fiche et appuyez sur lecture.</p>
+<p><strong>Catalogue d'exercices :</strong> les données et animations proviennent d'ExerciseDB OSS (AscendAPI) et les vidéos de technique intégrées localement de free-exercise-db-api (licence MIT). L'app n'envoie aucune donnée à ces services.</p>
+<h2>Analytique et suivi</h2>
+<p><strong>Aucun.</strong> Pas de SDK d'analytique, de publicité ni de suivi.</p>
+<h2>Sauvegardes</h2>
+<p>L'export/import se fait via des fichiers que vous générez et contrôlez. L'app n'envoie rien vers le cloud.</p>
+<h2>Suppression</h2>
+<p>Supprimez vos données dans les Réglages ou en désinstallant l'app. Sans serveurs, la suppression est complète et immédiate.</p>
+<h2>Modifications et contact</h2>
+<p>Les changements seront publiés sur cette page et dans le dépôt du projet. Pour toute question, ouvrez un ticket dans le dépôt.</p>`,
+it: `<h1>Informativa sulla privacy — FitCoach</h1>
+<p><em>Ultimo aggiornamento: novembre 2026</em></p>
+<h2>Riepilogo</h2>
+<p>FitCoach è un'app di allenamento <strong>local-first</strong>: profilo, piani, cronologia e preferenze sono salvati <strong>solo sul tuo dispositivo</strong> (IndexedDB). Nessun server, nessun account, nessuna analitica, nessuna pubblicità.</p>
+<h2>Dati archiviati (locali)</h2>
+<ul>
+<li><strong>Profilo:</strong> età, sesso, altezza, peso, obiettivo, livello, giorni di allenamento, attrezzatura, infortuni.</li>
+<li><strong>Piani ed esercizi:</strong> serie, ripetizioni, recuperi.</li>
+<li><strong>Cronologia:</strong> sessioni, record personali, statistiche.</li>
+<li><strong>Preferenze:</strong> lingua, tema, unità, consensi.</li>
+</ul>
+<h2>Servizi di terze parti</h2>
+<p><strong>Provider IA (opzionale):</strong> se configuri una chiave API (OpenRouter o GLM), l'app invia al provider scelto un contesto minimo: obiettivo, livello, giorni e attrezzatura; cronologia e infortuni sono inclusi solo con il tuo consenso esplicito nelle Impostazioni. Le chiavi restano in locale.</p>
+<p><strong>YouTube (su richiesta):</strong> le schede degli esercizi possono riprodurre video di tecnica tramite youtube-nocookie.com e la YouTube Data API. La richiesta avviene solo quando apri una scheda e premi play.</p>
+<p><strong>Catalogo esercizi:</strong> dati e animazioni provengono da ExerciseDB OSS (AscendAPI) e i video di tecnica inclusi localmente da free-exercise-db-api (licenza MIT). L'app non invia dati a questi servizi.</p>
+<h2>Analitica e tracciamento</h2>
+<p><strong>Nessuna.</strong> Nessun SDK di analitica, pubblicità o tracciamento.</p>
+<h2>Backup</h2>
+<p>Export e import avvengono tramite file che generi e controlli tu. L'app non carica nulla nel cloud.</p>
+<h2>Eliminazione</h2>
+<p>Elimina i dati dalle Impostazioni o disinstallando l'app. Senza server, l'eliminazione è completa e immediata.</p>
+<h2>Modifiche e contatti</h2>
+<p>Le modifiche saranno pubblicate su questa pagina e nel repository del progetto. Per domande, apri una issue nel repository.</p>`,
+ja: `<h1>プライバシーポリシー — FitCoach</h1>
+<p><em>最終更新：2026年11月</em></p>
+<h2>概要</h2>
+<p>FitCoachは<strong>ローカルファースト</strong>のトレーニングアプリです。プロフィール、プラン、履歴、設定は<strong>お使いのデバイス内のみ</strong>（IndexedDB）に保存されます。サーバー、アカウント、分析、広告はありません。</p>
+<h2>保存されるデータ（ローカル）</h2>
+<ul>
+<li><strong>プロフィール：</strong>年齢、性別、身長、体重、目標、レベル、トレーニング日、器具、怪我。</li>
+<li><strong>プランとエクササイズ：</strong>セット、レップ、休憩時間。</li>
+<li><strong>履歴：</strong>セッション、自己記録、統計。</li>
+<li><strong>設定：</strong>言語、テーマ、単位、同意事項。</li>
+</ul>
+<h2>第三者サービス</h2>
+<p><strong>AIプロバイダー（任意）：</strong>APIキー（OpenRouterまたはGLM）を設定した場合、アプリは選択したプロバイダーに最小限のコンテキスト（目標、レベル、日数、器具）のみを送信します。履歴や怪我は設定で明示的に同意した場合のみ含まれます。キーはローカルに保存されます。</p>
+<p><strong>YouTube（オンデマンド）：</strong>エクササイズ詳細ではyoutube-nocookie.comとYouTube Data APIを通じてテクニック動画を再生できます。詳細を開き再生ボタンを押したときのみリクエストが行われます。</p>
+<p><strong>エクササイズカタログ：</strong>データとアニメーションはExerciseDB OSS（AscendAPI）由来、ローカル同梱のテクニック動画はfree-exercise-db-api（MITライセンス）由来です。これらのサービスへデータは送信されません。</p>
+<h2>分析とトラッキング</h2>
+<p><strong>なし。</strong>分析、広告、トラッキングSDKは一切ありません。</p>
+<h2>バックアップ</h2>
+<p>エクスポート／インポートはあなたが生成・管理するファイル経由です。クラウドへの送信はありません。</p>
+<h2>削除</h2>
+<p>設定から、またはアプリをアンインストールしてデータを削除できます。サーバーがないため削除は完全かつ即時です。</p>
+<h2>変更と連絡先</h2>
+<p>変更はこのページとプロジェクトリポジトリに掲載されます。お問い合わせはリポジトリのIssueへ。</p>`,
+pl: `<h1>Polityka prywatności — FitCoach</h1>
+<p><em>Ostatnia aktualizacja: listopad 2026</em></p>
+<h2>Podsumowanie</h2>
+<p>FitCoach to aplikacja treningowa <strong>local-first</strong>: profil, plany, historia i preferencje są przechowywane <strong>wyłącznie na Twoim urządzeniu</strong> (IndexedDB). Brak serwerów, kont, analityki i reklam.</p>
+<h2>Przechowywane dane (lokalne)</h2>
+<ul>
+<li><strong>Profil:</strong> wiek, płeć, wzrost, waga, cel, poziom, dni treningowe, sprzęt, kontuzje.</li>
+<li><strong>Plany i ćwiczenia:</strong> serie, powtórzenia, przerwy.</li>
+<li><strong>Historia:</strong> sesje, rekordy osobiste, statystyki.</li>
+<li><strong>Preferencje:</strong> język, motyw, jednostki, zgody.</li>
+</ul>
+<h2>Usługi zewnętrzne</h2>
+<p><strong>Dostawcy AI (opcjonalnie):</strong> jeśli skonfigurujesz klucz API (OpenRouter lub GLM), aplikacja wysyła wybranemu dostawcy minimalny kontekst: cel, poziom, dni i sprzęt; historia i kontuzje są dołączane tylko za Twoją wyraźną zgodą w Ustawieniach. Klucze są przechowywane lokalnie.</p>
+<p><strong>YouTube (na żądanie):</strong> karty ćwiczeń mogą odtwarzać filmy techniki przez youtube-nocookie.com i YouTube Data API. Żądanie jest wysyłane tylko po otwarciu karty i naciśnięciu odtwarzania.</p>
+<p><strong>Katalog ćwiczeń:</strong> dane i animacje pochodzą z ExerciseDB OSS (AscendAPI), a lokalnie dołączone filmy techniki z free-exercise-db-api (licencja MIT). Aplikacja nie wysyła danych do tych usług.</p>
+<h2>Analityka i śledzenie</h2>
+<p><strong>Brak.</strong> Żadnych SDK analitycznych, reklamowych ani śledzących.</p>
+<h2>Kopie zapasowe</h2>
+<p>Eksport i import odbywa się przez pliki, które generujesz i kontrolujesz. Aplikacja niczego nie wysyła do chmury.</p>
+<h2>Usuwanie danych</h2>
+<p>Usuń dane w Ustawieniach lub odinstalowując aplikację. Bez serwerów usunięcie jest całkowite i natychmiastowe.</p>
+<h2>Zmiany i kontakt</h2>
+<p>Zmiany będą publikowane na tej stronie i w repozytorium projektu. W razie pytań otwórz zgłoszenie w repozytorium.</p>`,
+ru: `<h1>Политика конфиденциальности — FitCoach</h1>
+<p><em>Последнее обновление: ноябрь 2026</em></p>
+<h2>Кратко</h2>
+<p>FitCoach — <strong>local-first</strong> приложение для тренировок: профиль, планы, история и настройки хранятся <strong>только на вашем устройстве</strong> (IndexedDB). Нет серверов, аккаунтов, аналитики и рекламы.</p>
+<h2>Хранимые данные (локально)</h2>
+<ul>
+<li><strong>Профиль:</strong> возраст, пол, рост, вес, цель, уровень, дни тренировок, оборудование, травмы.</li>
+<li><strong>Планы и упражнения:</strong> подходы, повторения, отдых.</li>
+<li><strong>История:</strong> сессии, личные рекорды, статистика.</li>
+<li><strong>Настройки:</strong> язык, тема, единицы, согласия.</li>
+</ul>
+<h2>Сторонние сервисы</h2>
+<p><strong>AI-провайдеры (опционально):</strong> если вы настроите API-ключ (OpenRouter или GLM), приложение отправит выбранному провайдеру минимальный контекст: цель, уровень, дни и оборудование; история и травмы включаются только с вашего явного согласия в Настройках. Ключи хранятся локально.</p>
+<p><strong>YouTube (по запросу):</strong> карточки упражнений могут воспроизводить видео техники через youtube-nocookie.com и YouTube Data API. Запрос выполняется только при открытии карточки и нажатии воспроизведения.</p>
+<p><strong>Каталог упражнений:</strong> данные и анимации — от ExerciseDB OSS (AscendAPI), локально встроенные видео техники — от free-exercise-db-api (лицензия MIT). Приложение не отправляет данные этим сервисам.</p>
+<h2>Аналитика и отслеживание</h2>
+<p><strong>Нет.</strong> Никаких SDK аналитики, рекламы или трекинга.</p>
+<h2>Резервные копии</h2>
+<p>Экспорт и импорт выполняются через файлы, которые вы создаёте и контролируете. Приложение ничего не отправляет в облако.</p>
+<h2>Удаление</h2>
+<p>Удалите данные в Настройках или удалением приложения. Без серверов удаление полное и мгновенное.</p>
+<h2>Изменения и контакты</h2>
+<p>Изменения публикуются на этой странице и в репозитории проекта. По вопросам откройте issue в репозитории.</p>`,
+tr: `<h1>Gizlilik Politikası — FitCoach</h1>
+<p><em>Son güncelleme: Kasım 2026</em></p>
+<h2>Özet</h2>
+<p>FitCoach <strong>yerel öncelikli</strong> bir antrenman uygulamasıdır: profil, planlar, geçmiş ve tercihler <strong>yalnızca cihazınızda</strong> (IndexedDB) saklanır. Sunucu, hesap, analitik ve reklam yoktur.</p>
+<h2>Saklanan veriler (yerel)</h2>
+<ul>
+<li><strong>Profil:</strong> yaş, cinsiyet, boy, kilo, hedef, seviye, antrenman günleri, ekipman, sakatlıklar.</li>
+<li><strong>Planlar ve egzersizler:</strong> setler, tekrarlar, dinlenmeler.</li>
+<li><strong>Geçmiş:</strong> seanslar, kişisel rekorlar, istatistikler.</li>
+<li><strong>Tercihler:</strong> dil, tema, birimler, onaylar.</li>
+</ul>
+<h2>Üçüncü taraf servisler</h2>
+<p><strong>AI sağlayıcıları (isteğe bağlı):</strong> bir API anahtarı (OpenRouter veya GLM) yapılandırırsanız, uygulama seçtiğiniz sağlayıcıya yalnızca asgari bağlam gönderir: hedef, seviye, günler ve ekipman; geçmiş ve sakatlıklar yalnızca Ayarlar'da açık onay verirseniz dahil edilir. Anahtarlar yerel olarak saklanır.</p>
+<p><strong>YouTube (isteğe bağlı):</strong> egzersiz kartları, youtube-nocookie.com ve YouTube Data API üzerinden teknik videoları oynatabilir. İstek yalnızca kartı açıp oynata bastığınızda yapılır.</p>
+<p><strong>Egzersiz kataloğu:</strong> veriler ve animasyonlar ExerciseDB OSS'den (AscendAPI), yerel olarak paketlenmiş teknik videolar free-exercise-db-api'den (MIT lisansı) gelir. Uygulama bu servislere veri göndermez.</p>
+<h2>Analitik ve izleme</h2>
+<p><strong>Yok.</strong> Analitik, reklam veya izleme SDK'sı bulunmaz.</p>
+<h2>Yedeklemeler</h2>
+<p>Dışa/içe aktarma, sizin oluşturduğunuz ve kontrol ettiğiniz dosyalarla yapılır. Uygulama buluta hiçbir şey göndermez.</p>
+<h2>Silme</h2>
+<p>Verilerinizi Ayarlar'dan veya uygulamayı kaldırarak silin. Sunucu olmadığı için silme tam ve anlıktır.</p>
+<h2>Değişiklikler ve iletişim</h2>
+<p>Değişiklikler bu sayfada ve proje deposunda yayınlanır. Sorular için depoda bir konu açın.</p>`,
+zh: `<h1>隐私政策 — FitCoach</h1>
+<p><em>最后更新：2026年11月</em></p>
+<h2>概述</h2>
+<p>FitCoach 是一款<strong>本地优先</strong>的训练应用：个人资料、计划、历史记录和偏好设置<strong>仅存储在您的设备上</strong>（IndexedDB）。无服务器、无账户、无分析、无广告。</p>
+<h2>存储的数据（本地）</h2>
+<ul>
+<li><strong>个人资料：</strong>年龄、性别、身高、体重、目标、水平、训练日、器械、伤病。</li>
+<li><strong>计划和练习：</strong>组数、次数、休息时间。</li>
+<li><strong>历史：</strong>训练记录、个人最佳、统计。</li>
+<li><strong>偏好：</strong>语言、主题、单位、同意项。</li>
+</ul>
+<h2>第三方服务</h2>
+<p><strong>AI 提供商（可选）：</strong>如果您配置了 API 密钥（OpenRouter 或 GLM），应用仅向所选提供商发送最小化上下文：目标、水平、天数和器械；历史记录和伤病仅在您在设置中明确同意时才会包含。密钥存储在本地。</p>
+<p><strong>YouTube（按需）：</strong>练习详情可通过 youtube-nocookie.com 和 YouTube Data API 播放技术视频。仅在您打开详情并点击播放时才发出请求。</p>
+<p><strong>练习目录：</strong>数据和动画来自 ExerciseDB OSS（AscendAPI），本地打包的技术视频来自 free-exercise-db-api（MIT 许可）。应用不向这些服务发送数据。</p>
+<h2>分析与追踪</h2>
+<p><strong>无。</strong>无任何分析、广告或追踪 SDK。</p>
+<h2>备份</h2>
+<p>导出/导入通过您生成和控制的文件进行。应用不会向云端上传任何内容。</p>
+<h2>删除</h2>
+<p>可在设置中或卸载应用来删除数据。由于没有服务器，删除是完全且即时的。</p>
+<h2>变更与联系</h2>
+<p>变更将发布在本页面和项目仓库中。如有疑问请在仓库中提交 issue。</p>`,
+};
+const NAMES = {es:"Español",en:"English",de:"Deutsch",fr:"Français",it:"Italiano",ja:"日本語",pl:"Polski",ru:"Русский",tr:"Türkçe",zh:"中文"};
+const sel = document.getElementById("langSel");
+for (const k of Object.keys(T)) {
+  const o = document.createElement("option");
+  o.value = k; o.textContent = NAMES[k];
+  sel.appendChild(o);
+}
+function pick() {
+  const q = new URLSearchParams(location.search).get("lang");
+  const nav = (navigator.language || "es").slice(0, 2).toLowerCase();
+  return T[q] ? q : (T[nav] ? nav : "es");
+}
+function show(l) {
+  document.getElementById("c").innerHTML = T[l];
+  document.documentElement.lang = l;
+  document.title = document.querySelector("#c h1").textContent;
+  sel.value = l;
+}
+sel.addEventListener("change", () => show(sel.value));
+show(pick());
+</script>
 </body>
 </html>
