@@ -5,14 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de privacidad — FitCoach</title>
 <style>
-  body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; line-height: 1.6; color: #1c1c1e; }
+  body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 0 auto; padding: 0 1.25rem 3rem; line-height: 1.6; color: #1c1c1e; }
   h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; margin-top: 1.75rem; }
   strong { font-weight: 650; } a { color: #2563eb; }
-  .lang { float: right; font-size: .85rem; padding: .3rem .5rem; border: 1px solid #ccc; border-radius: .5rem; }
+  /* Barra superior pegajosa con el selector de idioma (solo standalone;
+     dentro del modal de la app se oculta con ?embed=1 porque la propia
+     cabecera del modal ya trae el selector). */
+  .topbar { position: sticky; top: 0; z-index: 1; display: flex; justify-content: flex-end;
+            padding: .6rem 0 .5rem; background: #fff; border-bottom: 1px solid #e5e5ea; margin-bottom: 1rem; }
+  .lang { font-size: .85rem; padding: .35rem .6rem; border: 1px solid #d0d0d4;
+          border-radius: .5rem; background: #fff; color: #1c1c1e; }
+  body.embed .topbar { display: none; }
+  body.embed { padding-top: 1rem; }
 </style>
 </head>
 <body>
-<select id="langSel" class="lang" aria-label="Language"></select>
+<div class="topbar"><select id="langSel" class="lang" aria-label="Language"></select></div>
 <div id="c"></div>
 <script>
 const T = {
@@ -24,7 +32,6 @@ es: `<h1>Política de privacidad — FitCoach</h1>
 <ul>
 <li><strong>Perfil:</strong> edad, sexo, altura, peso, objetivo, nivel, días de entrenamiento, equipamiento, lesiones.</li>
 <li><strong>Planes y ejercicios:</strong> series, repeticiones, descansos.</li>
-<li><strong>Lesiones y adaptaciones:</strong> restricciones declaradas, cambios temporales del plan (sustituciones o eliminaciones) para restaurarlos al curarte, y conversaciones con el entrenador.</li>
 <li><strong>Historial:</strong> sesiones, marcas personales, estadísticas.</li>
 <li><strong>Preferencias:</strong> idioma, tema, unidades, consentimientos.</li>
 </ul>
@@ -35,7 +42,7 @@ es: `<h1>Política de privacidad — FitCoach</h1>
 <h2>Analítica y rastreo</h2>
 <p><strong>Ninguno.</strong> Sin SDKs de analítica, publicidad ni rastreadores.</p>
 <h2>Copias de seguridad</h2>
-<p>La exportación e importación de datos se hace mediante ficheros que tú generas y controlas. La app no sube nada a la nube.</p>
+<p>La exportación e importación de datos se hace mediante ficheros que tú generas y controlas. La app no sube nada a la nube. Si activas la copia de seguridad automática de Android, los datos pueden restaurarse vía Google (cifrada, gestionada por el sistema).</p>
 <h2>Eliminación</h2>
 <p>Borra tus datos desde Ajustes o desinstalando la app. Al no existir servidores, la eliminación es completa e inmediata.</p>
 <h2>Cambios y contacto</h2>
@@ -48,7 +55,6 @@ en: `<h1>Privacy Policy — FitCoach</h1>
 <ul>
 <li><strong>Profile:</strong> age, sex, height, weight, goal, level, training days, equipment, injuries.</li>
 <li><strong>Plans & exercises:</strong> sets, reps, rest times.</li>
-<li><strong>Injuries & adaptations:</strong> declared restrictions, temporary plan changes (substitutions or removals) so they can be restored when healed, and coach conversations.</li>
 <li><strong>History:</strong> sessions, personal records, statistics.</li>
 <li><strong>Preferences:</strong> language, theme, units, consents.</li>
 </ul>
@@ -59,7 +65,7 @@ en: `<h1>Privacy Policy — FitCoach</h1>
 <h2>Analytics & tracking</h2>
 <p><strong>None.</strong> No analytics, advertising or tracking SDKs.</p>
 <h2>Backups</h2>
-<p>Data export/import uses files you generate and control. The app uploads nothing to the cloud.</p>
+<p>Data export/import uses files you generate and control. The app uploads nothing to the cloud. Android’s automatic backup may restore app data via Google (encrypted, system-managed).</p>
 <h2>Deletion</h2>
 <p>Delete your data in Settings or by uninstalling the app. With no servers, deletion is complete and immediate.</p>
 <h2>Changes & contact</h2>
@@ -72,7 +78,6 @@ de: `<h1>Datenschutzrichtlinie — FitCoach</h1>
 <ul>
 <li><strong>Profil:</strong> Alter, Geschlecht, Größe, Gewicht, Ziel, Level, Trainingstage, Ausrüstung, Verletzungen.</li>
 <li><strong>Pläne & Übungen:</strong> Sätze, Wiederholungen, Pausen.</li>
-<li><strong>Verletzungen & Anpassungen:</strong> gemeldete Einschränkungen, temporäre Planänderungen (Ersetzungen oder Entfernungen) zur Wiederherstellung nach der Heilung sowie Trainer-Gespräche.</li>
 <li><strong>Verlauf:</strong> Einheiten, persönliche Rekorde, Statistiken.</li>
 <li><strong>Einstellungen:</strong> Sprache, Design, Einheiten, Einwilligungen.</li>
 </ul>
@@ -83,7 +88,7 @@ de: `<h1>Datenschutzrichtlinie — FitCoach</h1>
 <h2>Analysen & Tracking</h2>
 <p><strong>Keine.</strong> Keine Analyse-, Werbe- oder Tracking-SDKs.</p>
 <h2>Backups</h2>
-<p>Export und Import erfolgen über Dateien, die du erstellst und kontrollierst. Die App lädt nichts in die Cloud.</p>
+<p>Export und Import erfolgen über Dateien, die du erstellst und kontrollierst. Die App lädt nichts in die Cloud. Die automatische Android-Sicherung kann App-Daten über Google wiederherstellen (verschlüsselt, systemverwaltet).</p>
 <h2>Löschung</h2>
 <p>Daten in den Einstellungen oder durch Deinstallation löschen. Ohne Server ist die Löschung vollständig und sofortig.</p>
 <h2>Änderungen & Kontakt</h2>
@@ -96,7 +101,6 @@ fr: `<h1>Politique de confidentialité — FitCoach</h1>
 <ul>
 <li><strong>Profil :</strong> âge, sexe, taille, poids, objectif, niveau, jours d'entraînement, équipement, blessures.</li>
 <li><strong>Plans et exercices :</strong> séries, répétitions, repos.</li>
-<li><strong>Blessures et adaptations :</strong> restrictions déclarées, modifications temporaires du plan (substitutions ou suppressions) pour les restaurer une fois guéri, et conversations avec le coach.</li>
 <li><strong>Historique :</strong> séances, records personnels, statistiques.</li>
 <li><strong>Préférences :</strong> langue, thème, unités, consentements.</li>
 </ul>
@@ -107,7 +111,7 @@ fr: `<h1>Politique de confidentialité — FitCoach</h1>
 <h2>Analytique et suivi</h2>
 <p><strong>Aucun.</strong> Pas de SDK d'analytique, de publicité ni de suivi.</p>
 <h2>Sauvegardes</h2>
-<p>L'export/import se fait via des fichiers que vous générez et contrôlez. L'app n'envoie rien vers le cloud.</p>
+<p>L'export/import se fait via des fichiers que vous générez et contrôlez. L'app n'envoie rien vers le cloud. La sauvegarde automatique d’Android peut restaurer les données via Google (chiffrée, gérée par le système).</p>
 <h2>Suppression</h2>
 <p>Supprimez vos données dans les Réglages ou en désinstallant l'app. Sans serveurs, la suppression est complète et immédiate.</p>
 <h2>Modifications et contact</h2>
@@ -120,7 +124,6 @@ it: `<h1>Informativa sulla privacy — FitCoach</h1>
 <ul>
 <li><strong>Profilo:</strong> età, sesso, altezza, peso, obiettivo, livello, giorni di allenamento, attrezzatura, infortuni.</li>
 <li><strong>Piani ed esercizi:</strong> serie, ripetizioni, recuperi.</li>
-<li><strong>Infortuni e adattamenti:</strong> restrizioni dichiarate, modifiche temporanee del piano (sostituzioni o rimozioni) per ripristinarle alla guarigione, e conversazioni con il coach.</li>
 <li><strong>Cronologia:</strong> sessioni, record personali, statistiche.</li>
 <li><strong>Preferenze:</strong> lingua, tema, unità, consensi.</li>
 </ul>
@@ -131,7 +134,7 @@ it: `<h1>Informativa sulla privacy — FitCoach</h1>
 <h2>Analitica e tracciamento</h2>
 <p><strong>Nessuna.</strong> Nessun SDK di analitica, pubblicità o tracciamento.</p>
 <h2>Backup</h2>
-<p>Export e import avvengono tramite file che generi e controlli tu. L'app non carica nulla nel cloud.</p>
+<p>Export e import avvengono tramite file che generi e controlli tu. L'app non carica nulla nel cloud. Il backup automatico di Android può ripristinare i dati tramite Google (cifrato, gestito dal sistema).</p>
 <h2>Eliminazione</h2>
 <p>Elimina i dati dalle Impostazioni o disinstallando l'app. Senza server, l'eliminazione è completa e immediata.</p>
 <h2>Modifiche e contatti</h2>
@@ -144,7 +147,6 @@ ja: `<h1>プライバシーポリシー — FitCoach</h1>
 <ul>
 <li><strong>プロフィール：</strong>年齢、性別、身長、体重、目標、レベル、トレーニング日、器具、怪我。</li>
 <li><strong>プランとエクササイズ：</strong>セット、レップ、休憩時間。</li>
-<li><strong>怪我と適応：</strong>申告された制限、回復時に復元できるよう計画へ加えた一時的な変更（置換または削除）、およびコーチとの会話。</li>
 <li><strong>履歴：</strong>セッション、自己記録、統計。</li>
 <li><strong>設定：</strong>言語、テーマ、単位、同意事項。</li>
 </ul>
@@ -155,7 +157,7 @@ ja: `<h1>プライバシーポリシー — FitCoach</h1>
 <h2>分析とトラッキング</h2>
 <p><strong>なし。</strong>分析、広告、トラッキングSDKは一切ありません。</p>
 <h2>バックアップ</h2>
-<p>エクスポート／インポートはあなたが生成・管理するファイル経由です。クラウドへの送信はありません。</p>
+<p>エクスポート／インポートはあなたが生成・管理するファイル経由です。クラウドへの送信はありません。 Androidの自動バックアップが有効な場合、アプリのデータはGoogle経由で復元されることがあります（暗号化、システム管理）。</p>
 <h2>削除</h2>
 <p>設定から、またはアプリをアンインストールしてデータを削除できます。サーバーがないため削除は完全かつ即時です。</p>
 <h2>変更と連絡先</h2>
@@ -168,7 +170,6 @@ pl: `<h1>Polityka prywatności — FitCoach</h1>
 <ul>
 <li><strong>Profil:</strong> wiek, płeć, wzrost, waga, cel, poziom, dni treningowe, sprzęt, kontuzje.</li>
 <li><strong>Plany i ćwiczenia:</strong> serie, powtórzenia, przerwy.</li>
-<li><strong>Kontuzje i adaptacje:</strong> zgłoszone ograniczenia, tymczasowe zmiany planu (zamiany lub usunięcia) umożliwiające ich przywrócenie po wyleczeniu oraz rozmowy z trenerem.</li>
 <li><strong>Historia:</strong> sesje, rekordy osobiste, statystyki.</li>
 <li><strong>Preferencje:</strong> język, motyw, jednostki, zgody.</li>
 </ul>
@@ -179,7 +180,7 @@ pl: `<h1>Polityka prywatności — FitCoach</h1>
 <h2>Analityka i śledzenie</h2>
 <p><strong>Brak.</strong> Żadnych SDK analitycznych, reklamowych ani śledzących.</p>
 <h2>Kopie zapasowe</h2>
-<p>Eksport i import odbywa się przez pliki, które generujesz i kontrolujesz. Aplikacja niczego nie wysyła do chmury.</p>
+<p>Eksport i import odbywa się przez pliki, które generujesz i kontrolujesz. Aplikacja niczego nie wysyła do chmury. Automatyczna kopia zapasowa Androida może przywrócić dane przez Google (szyfrowana, zarządzana systemowo).</p>
 <h2>Usuwanie danych</h2>
 <p>Usuń dane w Ustawieniach lub odinstalowując aplikację. Bez serwerów usunięcie jest całkowite i natychmiastowe.</p>
 <h2>Zmiany i kontakt</h2>
@@ -192,7 +193,6 @@ ru: `<h1>Политика конфиденциальности — FitCoach</h1>
 <ul>
 <li><strong>Профиль:</strong> возраст, пол, рост, вес, цель, уровень, дни тренировок, оборудование, травмы.</li>
 <li><strong>Планы и упражнения:</strong> подходы, повторения, отдых.</li>
-<li><strong>Травмы и адаптации:</strong> заявленные ограничения, временные изменения плана (замены или удаления) для восстановления после заживления и разговоры с тренером.</li>
 <li><strong>История:</strong> сессии, личные рекорды, статистика.</li>
 <li><strong>Настройки:</strong> язык, тема, единицы, согласия.</li>
 </ul>
@@ -203,7 +203,7 @@ ru: `<h1>Политика конфиденциальности — FitCoach</h1>
 <h2>Аналитика и отслеживание</h2>
 <p><strong>Нет.</strong> Никаких SDK аналитики, рекламы или трекинга.</p>
 <h2>Резервные копии</h2>
-<p>Экспорт и импорт выполняются через файлы, которые вы создаёте и контролируете. Приложение ничего не отправляет в облако.</p>
+<p>Экспорт и импорт выполняются через файлы, которые вы создаёте и контролируете. Приложение ничего не отправляет в облако. Автоматическое резервное копирование Android может восстановить данные через Google (зашифровано, управляется системой).</p>
 <h2>Удаление</h2>
 <p>Удалите данные в Настройках или удалением приложения. Без серверов удаление полное и мгновенное.</p>
 <h2>Изменения и контакты</h2>
@@ -216,7 +216,6 @@ tr: `<h1>Gizlilik Politikası — FitCoach</h1>
 <ul>
 <li><strong>Profil:</strong> yaş, cinsiyet, boy, kilo, hedef, seviye, antrenman günleri, ekipman, sakatlıklar.</li>
 <li><strong>Planlar ve egzersizler:</strong> setler, tekrarlar, dinlenmeler.</li>
-<li><strong>Sakatlıklar ve adaptasyonlar:</strong> beyan edilen kısıtlamalar, iyileşince geri yüklenebilmesi için planda yapılan geçici değişiklikler (değişimler veya kaldırmalar) ve antrenör sohbetleri.</li>
 <li><strong>Geçmiş:</strong> seanslar, kişisel rekorlar, istatistikler.</li>
 <li><strong>Tercihler:</strong> dil, tema, birimler, onaylar.</li>
 </ul>
@@ -227,7 +226,7 @@ tr: `<h1>Gizlilik Politikası — FitCoach</h1>
 <h2>Analitik ve izleme</h2>
 <p><strong>Yok.</strong> Analitik, reklam veya izleme SDK'sı bulunmaz.</p>
 <h2>Yedeklemeler</h2>
-<p>Dışa/içe aktarma, sizin oluşturduğunuz ve kontrol ettiğiniz dosyalarla yapılır. Uygulama buluta hiçbir şey göndermez.</p>
+<p>Dışa/içe aktarma, sizin oluşturduğunuz ve kontrol ettiğiniz dosyalarla yapılır. Uygulama buluta hiçbir şey göndermez. Android’in otomatik yedeklemesi verileri Google aracılığıyla geri yükleyebilir (şifreli, sistem yönetimli).</p>
 <h2>Silme</h2>
 <p>Verilerinizi Ayarlar'dan veya uygulamayı kaldırarak silin. Sunucu olmadığı için silme tam ve anlıktır.</p>
 <h2>Değişiklikler ve iletişim</h2>
@@ -240,7 +239,6 @@ zh: `<h1>隐私政策 — FitCoach</h1>
 <ul>
 <li><strong>个人资料：</strong>年龄、性别、身高、体重、目标、水平、训练日、器械、伤病。</li>
 <li><strong>计划和练习：</strong>组数、次数、休息时间。</li>
-<li><strong>伤病与调整：</strong>已申报的限制、为在康复后可恢复而对计划所做的临时更改（替换或删除），以及与教练的对话。</li>
 <li><strong>历史：</strong>训练记录、个人最佳、统计。</li>
 <li><strong>偏好：</strong>语言、主题、单位、同意项。</li>
 </ul>
@@ -251,7 +249,7 @@ zh: `<h1>隐私政策 — FitCoach</h1>
 <h2>分析与追踪</h2>
 <p><strong>无。</strong>无任何分析、广告或追踪 SDK。</p>
 <h2>备份</h2>
-<p>导出/导入通过您生成和控制的文件进行。应用不会向云端上传任何内容。</p>
+<p>导出/导入通过您生成和控制的文件进行。应用不会向云端上传任何内容。 Android 自动备份可通过 Google 恢复应用数据（加密，由系统管理）。</p>
 <h2>删除</h2>
 <p>可在设置中或卸载应用来删除数据。由于没有服务器，删除是完全且即时的。</p>
 <h2>变更与联系</h2>
@@ -276,6 +274,15 @@ function show(l) {
   sel.value = l;
 }
 sel.addEventListener("change", () => show(sel.value));
+// Modo embebido (dentro del modal de la app): la cabecera del modal trae
+// su propio selector y cambia el idioma por postMessage; aquí se oculta la
+// barra y se escucha el mensaje. En la web pública funciona standalone.
+if (new URLSearchParams(location.search).get("embed") === "1")
+  document.body.classList.add("embed");
+window.addEventListener("message", (e) => {
+  if (e.origin === location.origin && e.data?.type === "setLang" && T[e.data.lang])
+    show(e.data.lang);
+});
 show(pick());
 </script>
 </body>
