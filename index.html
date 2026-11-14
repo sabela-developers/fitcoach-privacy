@@ -27,7 +27,7 @@ const T = {
 es: `<h1>Política de privacidad — FitCoach</h1>
 <p><em>Última actualización: noviembre de 2026</em></p>
 <h2>Resumen</h2>
-<p>FitCoach es una app de entrenamiento <strong>local primero</strong>: tu perfil, planes, historial y preferencias se guardan <strong>solo en tu dispositivo</strong> (IndexedDB). No hay servidores propios, ni cuentas, ni analítica, ni publicidad.</p>
+<p>FitCoach es una app de entrenamiento <strong>local primero</strong>: tu perfil, planes, historial y preferencias se guardan <strong>solo en tu dispositivo</strong> (IndexedDB). No necesitas cuenta; la IA compartida opcional usa Google Cloud, como se explica abajo. Sin analítica ni publicidad.</p>
 <h2>Datos almacenados (locales)</h2>
 <ul>
 <li><strong>Perfil:</strong> edad, sexo, altura, peso, objetivo, nivel, días de entrenamiento, equipamiento, lesiones.</li>
@@ -39,18 +39,21 @@ es: `<h1>Política de privacidad — FitCoach</h1>
 <p><strong>Proveedores de IA (opcional):</strong> si configuras una clave de API (OpenRouter o GLM), la app envía al proveedor elegido un contexto mínimo: objetivo, nivel, días y equipamiento; el historial y las lesiones solo se incluyen si activas el consentimiento explícito en Ajustes. Las claves se guardan localmente.</p>
 <p><strong>YouTube (bajo demanda):</strong> las fichas de ejercicio pueden reproducir vídeos de técnica mediante youtube-nocookie.com y la YouTube Data API. Solo se realiza la petición cuando abres la ficha y pulsas reproducir.</p>
 <p><strong>Catálogo de ejercicios:</strong> los datos de ejercicios y los vídeos de técnica incluidos localmente proceden de free-exercise-db (licencia MIT). La app no envía tus datos a ninguno de estos servicios.</p>
+<h2>Health Connect y Strava (opcional)</h2>
+<p>Solo al pulsar «Leer datos de salud» y conceder permisos, FitCoach lee el peso y los entrenamientos de los últimos 29 días de Health Connect (sin rutas ni frecuencia cardíaca). El peso más reciente se ofrece para actualizar el perfil; nunca se aplica sin tu confirmación. Los minutos de cardio importados se conservan localmente con fecha y origen, se incluyen en la copia JSON y ajustan únicamente la sesión de cardio de la semana en curso, no la progresión de fuerza ni el plan futuro. Puedes revocar los permisos en Android y borrar los datos de FitCoach desde Ajustes. Tu reloj o Strava solo aportan datos si su aplicación los comparte con Health Connect; Strava puede limitarse a actividades GPS. FitCoach no se conecta a tu cuenta de Strava ni recibe sus credenciales.</p>
+<p><strong>IA compartida opcional (Google Cloud):</strong> si se configura el proxy de Google Cloud, las consultas que envíes pasan por él y llegan al proveedor de IA. Firestore conserva un identificador aleatorio de instalación y contadores diarios de uso, no el texto de tus consultas. Tus propias claves de API no tienen límites de uso de FitCoach y no pasan por el proxy compartido. Los datos de Health Connect no se comparten con la IA automáticamente: los datos del perfil solo se incluyen conforme a tus ajustes de privacidad.</p>
 <h2>Analítica y rastreo</h2>
 <p><strong>Ninguno.</strong> Sin SDKs de analítica, publicidad ni rastreadores.</p>
 <h2>Copias de seguridad</h2>
 <p>La exportación e importación de datos se hace mediante ficheros que tú generas y controlas. La app no sube nada a la nube. Si activas la copia de seguridad automática de Android, los datos pueden restaurarse vía Google (cifrada, gestionada por el sistema).</p>
 <h2>Eliminación</h2>
-<p>Borra tus datos desde Ajustes o desinstalando la app. Al no existir servidores, la eliminación es completa e inmediata.</p>
+<p>Borra tus datos desde Ajustes o desinstalando la app. El borrado local no elimina los contadores anónimos de uso de IA compartida que ya estén en Google Cloud; estos deben caducar mediante la política de retención de Firestore.</p>
 <h2>Cambios y contacto</h2>
 <p>Los cambios se publicarán en esta página y en el repositorio del proyecto. Para consultas, abre un issue en el repositorio.</p>`,
 en: `<h1>Privacy Policy — FitCoach</h1>
 <p><em>Last updated: November 2026</em></p>
 <h2>Summary</h2>
-<p>FitCoach is a <strong>local-first</strong> training app: your profile, plans, history and preferences are stored <strong>only on your device</strong> (IndexedDB). No servers, no accounts, no analytics, no ads.</p>
+<p>FitCoach is a <strong>local-first</strong> training app: your profile, plans, history and preferences are stored <strong>only on your device</strong> (IndexedDB). No account is needed; optional shared AI uses Google Cloud as explained below. No analytics or ads.</p>
 <h2>Stored data (local)</h2>
 <ul>
 <li><strong>Profile:</strong> age, sex, height, weight, goal, level, training days, equipment, injuries.</li>
@@ -62,18 +65,21 @@ en: `<h1>Privacy Policy — FitCoach</h1>
 <p><strong>AI providers (optional):</strong> if you configure an API key (OpenRouter or GLM), the app sends the chosen provider a minimal context: goal, level, days and equipment; history and injuries are only included if you enable explicit consent in Settings. Keys are stored locally.</p>
 <p><strong>YouTube (on demand):</strong> exercise sheets can play technique videos via youtube-nocookie.com and the YouTube Data API. A request is only made when you open a sheet and press play.</p>
 <p><strong>Exercise catalog:</strong> exercise data and locally bundled technique videos come from free-exercise-db (MIT license). The app sends no data to these services.</p>
+<h2>Health Connect and Strava (optional)</h2>
+<p>Only when you tap “Read health data” and grant permission, FitCoach reads weight and workout sessions from the past 29 days in Health Connect (no routes or heart rate). The latest weight is offered as a profile update; it is never applied without your confirmation. Imported cardio minutes, date and source are stored locally, included in JSON backups and adjust only this week's cardio session, not strength progression or future plans. You can revoke permission in Android and delete FitCoach data in Settings. Your watch or Strava contributes data only if its app shares it with Health Connect; Strava may share only GPS activities. FitCoach does not connect to your Strava account or receive its credentials.</p>
+<p><strong>Optional shared AI (Google Cloud):</strong> if the Google Cloud proxy is configured, the questions you send pass through it to the AI provider. Firestore stores a random installation identifier and daily usage counts, not your question text. Your own API key is not subject to FitCoach usage limits and does not use the shared proxy. Health Connect records are not automatically shared with AI; profile data is shared only according to your privacy settings.</p>
 <h2>Analytics & tracking</h2>
 <p><strong>None.</strong> No analytics, advertising or tracking SDKs.</p>
 <h2>Backups</h2>
 <p>Data export/import uses files you generate and control. The app uploads nothing to the cloud. Android’s automatic backup may restore app data via Google (encrypted, system-managed).</p>
 <h2>Deletion</h2>
-<p>Delete your data in Settings or by uninstalling the app. With no servers, deletion is complete and immediate.</p>
+<p>Delete your data in Settings or by uninstalling the app. Local deletion does not remove previously stored anonymous shared-AI usage counters in Google Cloud; these must expire under Firestore retention settings.</p>
 <h2>Changes & contact</h2>
 <p>Changes will be published on this page and in the project repository. For questions, open an issue in the repository.</p>`,
 de: `<h1>Datenschutzrichtlinie — FitCoach</h1>
 <p><em>Zuletzt aktualisiert: November 2026</em></p>
 <h2>Zusammenfassung</h2>
-<p>FitCoach ist eine <strong>lokal-first</strong> Trainings-App: Profil, Pläne, Verlauf und Einstellungen werden <strong>nur auf deinem Gerät</strong> gespeichert (IndexedDB). Keine Server, keine Konten, kein Tracking, keine Werbung.</p>
+<p>FitCoach ist eine <strong>lokal-first</strong> Trainings-App: Profil, Pläne, Verlauf und Einstellungen werden <strong>nur auf deinem Gerät</strong> gespeichert (IndexedDB). Kein Konto erforderlich; die optionale gemeinsame KI nutzt Google Cloud wie unten beschrieben. Kein Tracking oder Werbung.</p>
 <h2>Gespeicherte Daten (lokal)</h2>
 <ul>
 <li><strong>Profil:</strong> Alter, Geschlecht, Größe, Gewicht, Ziel, Level, Trainingstage, Ausrüstung, Verletzungen.</li>
@@ -85,18 +91,21 @@ de: `<h1>Datenschutzrichtlinie — FitCoach</h1>
 <p><strong>KI-Anbieter (optional):</strong> Wenn du einen API-Schlüssel (OpenRouter oder GLM) konfigurierst, sendet die App dem gewählten Anbieter nur einen minimalen Kontext: Ziel, Level, Tage und Ausrüstung; Verlauf und Verletzungen werden nur mit deiner ausdrücklichen Einwilligung in den Einstellungen gesendet. Schlüssel werden lokal gespeichert.</p>
 <p><strong>YouTube (auf Abruf):</strong> Übungsblätter können Technikvideos über youtube-nocookie.com und die YouTube Data API abspielen. Eine Anfrage erfolgt nur, wenn du ein Blatt öffnest und auf Abspielen tippst.</p>
 <p><strong>Übungskatalog:</strong> Übungsdaten und lokal gebündelte Technikvideos stammen von free-exercise-db (MIT-Lizenz). Die App sendet keine Daten an diese Dienste.</p>
+<h2>Health Connect und Strava (optional)</h2>
+<p>Nur nach Antippen von „Gesundheitsdaten lesen“ und Erteilen der Berechtigung liest FitCoach Gewicht und Trainings der letzten 29 Tage aus Health Connect (keine Routen oder Herzfrequenz). Das aktuelle Gewicht wird nur nach Bestätigung ins Profil übernommen. Cardio-Minuten mit Datum und Quelle bleiben lokal, sind im JSON-Backup enthalten und passen nur das Cardio dieser Woche an, nicht das Krafttraining oder künftige Pläne. Berechtigungen können in Android entzogen, Daten in FitCoach gelöscht werden. Strava und Uhren liefern nur Daten, wenn ihre App diese an Health Connect überträgt; Strava eventuell nur GPS-Aktivitäten. FitCoach erhält keine Strava-Zugangsdaten.</p>
+<p><strong>Optionale gemeinsame KI (Google Cloud):</strong> bei konfiguriertem Proxy laufen gesendete Anfragen darüber zum KI-Anbieter. Firestore speichert eine zufällige Installationskennung und tägliche Nutzungszähler, nicht die Anfragetexte. Eigene API-Schlüssel sind unbegrenzt und nutzen den gemeinsamen Proxy nicht. Health-Connect-Daten werden nicht automatisch an die KI gesendet; Profildaten nur gemäß deinen Datenschutzeinstellungen.</p>
 <h2>Analysen & Tracking</h2>
 <p><strong>Keine.</strong> Keine Analyse-, Werbe- oder Tracking-SDKs.</p>
 <h2>Backups</h2>
 <p>Export und Import erfolgen über Dateien, die du erstellst und kontrollierst. Die App lädt nichts in die Cloud. Die automatische Android-Sicherung kann App-Daten über Google wiederherstellen (verschlüsselt, systemverwaltet).</p>
 <h2>Löschung</h2>
-<p>Daten in den Einstellungen oder durch Deinstallation löschen. Ohne Server ist die Löschung vollständig und sofortig.</p>
+<p>Daten in den Einstellungen oder durch Deinstallation löschen. Die lokale Löschung entfernt nicht bereits in Google Cloud gespeicherte anonyme KI-Nutzungszähler; sie müssen nach den Firestore-Aufbewahrungsregeln ablaufen.</p>
 <h2>Änderungen & Kontakt</h2>
 <p>Änderungen werden auf dieser Seite und im Projekt-Repository veröffentlicht. Bei Fragen öffne ein Issue im Repository.</p>`,
 fr: `<h1>Politique de confidentialité — FitCoach</h1>
 <p><em>Dernière mise à jour : novembre 2026</em></p>
 <h2>Résumé</h2>
-<p>FitCoach est une app d'entraînement <strong>local-first</strong> : profil, plans, historique et préférences sont stockés <strong>uniquement sur votre appareil</strong> (IndexedDB). Pas de serveurs, pas de comptes, pas d'analytics, pas de publicité.</p>
+<p>FitCoach est une app d'entraînement <strong>local-first</strong> : profil, plans, historique et préférences sont stockés <strong>uniquement sur votre appareil</strong> (IndexedDB). Pas de compte requis ; l'IA partagée facultative utilise Google Cloud comme décrit ci-dessous. Pas d'analytics ni de publicité.</p>
 <h2>Données stockées (locales)</h2>
 <ul>
 <li><strong>Profil :</strong> âge, sexe, taille, poids, objectif, niveau, jours d'entraînement, équipement, blessures.</li>
@@ -108,18 +117,21 @@ fr: `<h1>Politique de confidentialité — FitCoach</h1>
 <p><strong>Fournisseurs d'IA (optionnel) :</strong> si vous configurez une clé API (OpenRouter ou GLM), l'app envoie au fournisseur choisi un contexte minimal : objectif, niveau, jours et équipement ; l'historique et les blessures ne sont inclus qu'avec votre consentement explicite dans les Réglages. Les clés sont stockées localement.</p>
 <p><strong>YouTube (à la demande) :</strong> les fiches d'exercices peuvent lire des vidéos de technique via youtube-nocookie.com et l'API YouTube Data. Une requête n'est émise que lorsque vous ouvrez une fiche et appuyez sur lecture.</p>
 <p><strong>Catalogue d'exercices :</strong> les données des exercices et les vidéos de technique intégrées localement proviennent de free-exercise-db (licence MIT). L'app n'envoie aucune donnée à ces services.</p>
+<h2>Health Connect et Strava (facultatifs)</h2>
+<p>FitCoach ne lit le poids et les séances des 29 derniers jours dans Health Connect (ni parcours ni fréquence cardiaque) qu'après votre demande et autorisation. Le poids est proposé pour le profil, jamais appliqué sans confirmation. Les minutes de cardio, leur date et leur source restent locales, figurent dans la sauvegarde JSON et n'ajustent que le cardio de la semaine actuelle, sans toucher à la progression de force ni aux plans futurs. Vous pouvez révoquer les permissions Android et supprimer les données dans FitCoach. Strava et les montres ne fournissent des données que si leur app les partage avec Health Connect ; Strava peut se limiter au GPS. FitCoach ne reçoit aucun identifiant Strava.</p>
+<p><strong>IA partagée facultative (Google Cloud) :</strong> si le proxy est configuré, les questions que vous envoyez passent par celui-ci puis au fournisseur d'IA. Firestore conserve un identifiant d'installation aléatoire et des compteurs quotidiens, pas le texte des questions. Vos clés API personnelles restent sans limites FitCoach et contournent le proxy partagé. Les données Health Connect ne sont pas automatiquement envoyées à l'IA ; le profil est partagé uniquement selon vos réglages.</p>
 <h2>Analytique et suivi</h2>
 <p><strong>Aucun.</strong> Pas de SDK d'analytique, de publicité ni de suivi.</p>
 <h2>Sauvegardes</h2>
 <p>L'export/import se fait via des fichiers que vous générez et contrôlez. L'app n'envoie rien vers le cloud. La sauvegarde automatique d’Android peut restaurer les données via Google (chiffrée, gérée par le système).</p>
 <h2>Suppression</h2>
-<p>Supprimez vos données dans les Réglages ou en désinstallant l'app. Sans serveurs, la suppression est complète et immédiate.</p>
+<p>Supprimez vos données dans les Réglages ou en désinstallant l'app. La suppression locale n'efface pas les compteurs anonymes de l'IA partagée déjà stockés dans Google Cloud ; ils expirent selon la politique de conservation de Firestore.</p>
 <h2>Modifications et contact</h2>
 <p>Les changements seront publiés sur cette page et dans le dépôt du projet. Pour toute question, ouvrez un ticket dans le dépôt.</p>`,
 it: `<h1>Informativa sulla privacy — FitCoach</h1>
 <p><em>Ultimo aggiornamento: novembre 2026</em></p>
 <h2>Riepilogo</h2>
-<p>FitCoach è un'app di allenamento <strong>local-first</strong>: profilo, piani, cronologia e preferenze sono salvati <strong>solo sul tuo dispositivo</strong> (IndexedDB). Nessun server, nessun account, nessuna analitica, nessuna pubblicità.</p>
+<p>FitCoach è un'app di allenamento <strong>local-first</strong>: profilo, piani, cronologia e preferenze sono salvati <strong>solo sul tuo dispositivo</strong> (IndexedDB). Nessun account richiesto; l'IA condivisa facoltativa usa Google Cloud come spiegato sotto. Nessuna analitica o pubblicità.</p>
 <h2>Dati archiviati (locali)</h2>
 <ul>
 <li><strong>Profilo:</strong> età, sesso, altezza, peso, obiettivo, livello, giorni di allenamento, attrezzatura, infortuni.</li>
@@ -131,18 +143,21 @@ it: `<h1>Informativa sulla privacy — FitCoach</h1>
 <p><strong>Provider IA (opzionale):</strong> se configuri una chiave API (OpenRouter o GLM), l'app invia al provider scelto un contesto minimo: obiettivo, livello, giorni e attrezzatura; cronologia e infortuni sono inclusi solo con il tuo consenso esplicito nelle Impostazioni. Le chiavi restano in locale.</p>
 <p><strong>YouTube (su richiesta):</strong> le schede degli esercizi possono riprodurre video di tecnica tramite youtube-nocookie.com e la YouTube Data API. La richiesta avviene solo quando apri una scheda e premi play.</p>
 <p><strong>Catalogo esercizi:</strong> i dati degli esercizi e i video di tecnica inclusi localmente provengono da free-exercise-db (licenza MIT). L'app non invia dati a questi servizi.</p>
+<h2>Health Connect e Strava (facoltativi)</h2>
+<p>Solo dopo aver richiesto e autorizzato la lettura, FitCoach legge peso e allenamenti degli ultimi 29 giorni da Health Connect (non percorsi o frequenza cardiaca). Il peso viene proposto per il profilo, mai applicato senza conferma. Minuti di cardio, data e origine restano in locale, sono inclusi nel backup JSON e modificano solo il cardio di questa settimana, non la progressione di forza o i piani futuri. Puoi revocare i permessi Android e cancellare i dati in FitCoach. Strava e orologi forniscono dati solo se la loro app li condivide con Health Connect; Strava può condividere solo attività GPS. FitCoach non riceve le credenziali Strava.</p>
+<p><strong>IA condivisa facoltativa (Google Cloud):</strong> se il proxy è configurato, le richieste che invii passano da esso al fornitore IA. Firestore conserva un identificativo casuale di installazione e contatori giornalieri, non il testo delle richieste. Le chiavi API personali sono senza limiti FitCoach e non usano il proxy condiviso. I dati Health Connect non vengono inviati automaticamente all'IA; il profilo solo secondo le tue impostazioni di privacy.</p>
 <h2>Analitica e tracciamento</h2>
 <p><strong>Nessuna.</strong> Nessun SDK di analitica, pubblicità o tracciamento.</p>
 <h2>Backup</h2>
 <p>Export e import avvengono tramite file che generi e controlli tu. L'app non carica nulla nel cloud. Il backup automatico di Android può ripristinare i dati tramite Google (cifrato, gestito dal sistema).</p>
 <h2>Eliminazione</h2>
-<p>Elimina i dati dalle Impostazioni o disinstallando l'app. Senza server, l'eliminazione è completa e immediata.</p>
+<p>Elimina i dati dalle Impostazioni o disinstallando l'app. L'eliminazione locale non cancella i contatori anonimi dell'IA condivisa già memorizzati su Google Cloud; scadono secondo i criteri di conservazione di Firestore.</p>
 <h2>Modifiche e contatti</h2>
 <p>Le modifiche saranno pubblicate su questa pagina e nel repository del progetto. Per domande, apri una issue nel repository.</p>`,
 ja: `<h1>プライバシーポリシー — FitCoach</h1>
 <p><em>最終更新：2026年11月</em></p>
 <h2>概要</h2>
-<p>FitCoachは<strong>ローカルファースト</strong>のトレーニングアプリです。プロフィール、プラン、履歴、設定は<strong>お使いのデバイス内のみ</strong>（IndexedDB）に保存されます。サーバー、アカウント、分析、広告はありません。</p>
+<p>FitCoachは<strong>ローカルファースト</strong>のトレーニングアプリです。プロフィール、プラン、履歴、設定は<strong>お使いのデバイス内のみ</strong>（IndexedDB）に保存されます。アカウントは不要です。任意の共有AIは以下に記すGoogle Cloudを利用します。分析や広告はありません。</p>
 <h2>保存されるデータ（ローカル）</h2>
 <ul>
 <li><strong>プロフィール：</strong>年齢、性別、身長、体重、目標、レベル、トレーニング日、器具、怪我。</li>
@@ -154,18 +169,21 @@ ja: `<h1>プライバシーポリシー — FitCoach</h1>
 <p><strong>AIプロバイダー（任意）：</strong>APIキー（OpenRouterまたはGLM）を設定した場合、アプリは選択したプロバイダーに最小限のコンテキスト（目標、レベル、日数、器具）のみを送信します。履歴や怪我は設定で明示的に同意した場合のみ含まれます。キーはローカルに保存されます。</p>
 <p><strong>YouTube（オンデマンド）：</strong>エクササイズ詳細ではyoutube-nocookie.comとYouTube Data APIを通じてテクニック動画を再生できます。詳細を開き再生ボタンを押したときのみリクエストが行われます。</p>
 <p><strong>エクササイズカタログ：</strong>エクササイズデータとローカル同梱のテクニック動画はfree-exercise-db（MITライセンス）由来です。これらのサービスへデータは送信されません。</p>
+<h2>Health ConnectとStrava（任意）</h2>
+<p>「健康データを読み取る」を押して許可した場合にのみ、FitCoachはHealth Connectの過去29日間の体重と運動記録を読み取ります（経路や心拍数は読み取りません）。最新の体重はプロフィール更新の候補として表示し、確認なしに変更しません。有酸素運動の時間・日付・提供元は端末内に保存され、JSONバックアップに含まれます。今週の有酸素運動のみ調整し、筋力の進捗や将来の計画は変更しません。Androidで権限を取り消し、FitCoachでデータを削除できます。時計やStravaのアプリがHealth Connectに共有した場合のみデータが届きます。StravaはGPS運動のみの場合があります。FitCoachはStravaの認証情報を受け取りません。</p>
+<p><strong>共有AI（任意、Google Cloud）：</strong>プロキシ設定時、送信した質問はプロキシ経由でAIプロバイダーに届きます。FirestoreはランダムなインストールIDと日次利用回数のみ保存し、質問文は保存しません。個人のAPIキーはFitCoachの利用制限を受けず、共有プロキシを使いません。Health Connectの記録は自動的にAIへ送信されず、プロフィールはプライバシー設定に従います。</p>
 <h2>分析とトラッキング</h2>
 <p><strong>なし。</strong>分析、広告、トラッキングSDKは一切ありません。</p>
 <h2>バックアップ</h2>
 <p>エクスポート／インポートはあなたが生成・管理するファイル経由です。クラウドへの送信はありません。 Androidの自動バックアップが有効な場合、アプリのデータはGoogle経由で復元されることがあります（暗号化、システム管理）。</p>
 <h2>削除</h2>
-<p>設定から、またはアプリをアンインストールしてデータを削除できます。サーバーがないため削除は完全かつ即時です。</p>
+<p>設定から、またはアプリをアンインストールしてデータを削除できます。端末内の削除は、Google Cloudに既に保存された共有AIの匿名利用回数を削除しません。Firestoreの保持規則に従って期限切れになります。</p>
 <h2>変更と連絡先</h2>
 <p>変更はこのページとプロジェクトリポジトリに掲載されます。お問い合わせはリポジトリのIssueへ。</p>`,
 pl: `<h1>Polityka prywatności — FitCoach</h1>
 <p><em>Ostatnia aktualizacja: listopad 2026</em></p>
 <h2>Podsumowanie</h2>
-<p>FitCoach to aplikacja treningowa <strong>local-first</strong>: profil, plany, historia i preferencje są przechowywane <strong>wyłącznie na Twoim urządzeniu</strong> (IndexedDB). Brak serwerów, kont, analityki i reklam.</p>
+<p>FitCoach to aplikacja treningowa <strong>local-first</strong>: profil, plany, historia i preferencje są przechowywane <strong>wyłącznie na Twoim urządzeniu</strong> (IndexedDB). Konto nie jest wymagane; opcjonalna wspólna AI korzysta z Google Cloud, jak opisano niżej. Bez analityki i reklam.</p>
 <h2>Przechowywane dane (lokalne)</h2>
 <ul>
 <li><strong>Profil:</strong> wiek, płeć, wzrost, waga, cel, poziom, dni treningowe, sprzęt, kontuzje.</li>
@@ -177,18 +195,21 @@ pl: `<h1>Polityka prywatności — FitCoach</h1>
 <p><strong>Dostawcy AI (opcjonalnie):</strong> jeśli skonfigurujesz klucz API (OpenRouter lub GLM), aplikacja wysyła wybranemu dostawcy minimalny kontekst: cel, poziom, dni i sprzęt; historia i kontuzje są dołączane tylko za Twoją wyraźną zgodą w Ustawieniach. Klucze są przechowywane lokalnie.</p>
 <p><strong>YouTube (na żądanie):</strong> karty ćwiczeń mogą odtwarzać filmy techniki przez youtube-nocookie.com i YouTube Data API. Żądanie jest wysyłane tylko po otwarciu karty i naciśnięciu odtwarzania.</p>
 <p><strong>Katalog ćwiczeń:</strong> dane ćwiczeń i lokalnie dołączone filmy techniki pochodzą z free-exercise-db (licencja MIT). Aplikacja nie wysyła danych do tych usług.</p>
+<h2>Health Connect i Strava (opcjonalnie)</h2>
+<p>Dopiero po naciśnięciu przycisku i udzieleniu zgody FitCoach odczytuje masę ciała i treningi z ostatnich 29 dni w Health Connect (bez tras i tętna). Najnowsza masa jest proponowana jako zmiana profilu, nigdy wprowadzana bez potwierdzenia. Minuty kardio, data i źródło pozostają lokalne, są w kopii JSON i modyfikują tylko kardio bieżącego tygodnia, nie postępy siłowe ani przyszłe plany. Możesz cofnąć zgodę w Androidzie i usunąć dane w FitCoach. Zegarki i Strava dostarczają dane tylko, jeśli ich aplikacje udostępniają je w Health Connect; Strava może udostępniać tylko aktywności GPS. FitCoach nie otrzymuje danych logowania do Strava.</p>
+<p><strong>Opcjonalna wspólna AI (Google Cloud):</strong> gdy proxy jest skonfigurowane, wysłane zapytania przechodzą przez nie do dostawcy AI. Firestore przechowuje losowy identyfikator instalacji i dzienne liczniki, nie tekst zapytań. Własny klucz API nie podlega limitom FitCoach i omija wspólne proxy. Rekordy Health Connect nie są automatycznie udostępniane AI; dane profilu zależą od ustawień prywatności.</p>
 <h2>Analityka i śledzenie</h2>
 <p><strong>Brak.</strong> Żadnych SDK analitycznych, reklamowych ani śledzących.</p>
 <h2>Kopie zapasowe</h2>
 <p>Eksport i import odbywa się przez pliki, które generujesz i kontrolujesz. Aplikacja niczego nie wysyła do chmury. Automatyczna kopia zapasowa Androida może przywrócić dane przez Google (szyfrowana, zarządzana systemowo).</p>
 <h2>Usuwanie danych</h2>
-<p>Usuń dane w Ustawieniach lub odinstalowując aplikację. Bez serwerów usunięcie jest całkowite i natychmiastowe.</p>
+<p>Usuń dane w Ustawieniach lub odinstalowując aplikację. Usunięcie lokalne nie usuwa anonimowych liczników wspólnej AI zapisanych już w Google Cloud; wygasają zgodnie z zasadami przechowywania Firestore.</p>
 <h2>Zmiany i kontakt</h2>
 <p>Zmiany będą publikowane na tej stronie i w repozytorium projektu. W razie pytań otwórz zgłoszenie w repozytorium.</p>`,
 ru: `<h1>Политика конфиденциальности — FitCoach</h1>
 <p><em>Последнее обновление: ноябрь 2026</em></p>
 <h2>Кратко</h2>
-<p>FitCoach — <strong>local-first</strong> приложение для тренировок: профиль, планы, история и настройки хранятся <strong>только на вашем устройстве</strong> (IndexedDB). Нет серверов, аккаунтов, аналитики и рекламы.</p>
+<p>FitCoach — <strong>local-first</strong> приложение для тренировок: профиль, планы, история и настройки хранятся <strong>только на вашем устройстве</strong> (IndexedDB). Аккаунт не требуется; необязательный общий ИИ использует Google Cloud, как описано ниже. Нет аналитики и рекламы.</p>
 <h2>Хранимые данные (локально)</h2>
 <ul>
 <li><strong>Профиль:</strong> возраст, пол, рост, вес, цель, уровень, дни тренировок, оборудование, травмы.</li>
@@ -200,18 +221,21 @@ ru: `<h1>Политика конфиденциальности — FitCoach</h1>
 <p><strong>AI-провайдеры (опционально):</strong> если вы настроите API-ключ (OpenRouter или GLM), приложение отправит выбранному провайдеру минимальный контекст: цель, уровень, дни и оборудование; история и травмы включаются только с вашего явного согласия в Настройках. Ключи хранятся локально.</p>
 <p><strong>YouTube (по запросу):</strong> карточки упражнений могут воспроизводить видео техники через youtube-nocookie.com и YouTube Data API. Запрос выполняется только при открытии карточки и нажатии воспроизведения.</p>
 <p><strong>Каталог упражнений:</strong> данные упражнений и локально встроенные видео техники — от free-exercise-db (лицензия MIT). Приложение не отправляет данные этим сервисам.</p>
+<h2>Health Connect и Strava (необязательно)</h2>
+<p>Только после нажатия кнопки и разрешения FitCoach считывает вес и тренировки за последние 29 дней из Health Connect (без маршрутов и пульса). Последний вес предлагается для профиля и не применяется без подтверждения. Минуты кардио, дата и источник хранятся локально, входят в резервную копию JSON и влияют только на кардио текущей недели, а не на силовую прогрессию или будущие планы. Разрешение можно отозвать в Android, данные удалить в FitCoach. Часы и Strava передают данные, только если их приложения делятся ими через Health Connect; Strava может передавать лишь GPS-активности. FitCoach не получает учётные данные Strava.</p>
+<p><strong>Общий ИИ (необязательно, Google Cloud):</strong> если прокси настроен, отправленные запросы идут через него к провайдеру ИИ. Firestore хранит случайный идентификатор установки и дневные счётчики, не текст запросов. Собственный API-ключ не ограничен FitCoach и не использует общий прокси. Данные Health Connect не передаются ИИ автоматически, профиль — только согласно настройкам приватности.</p>
 <h2>Аналитика и отслеживание</h2>
 <p><strong>Нет.</strong> Никаких SDK аналитики, рекламы или трекинга.</p>
 <h2>Резервные копии</h2>
 <p>Экспорт и импорт выполняются через файлы, которые вы создаёте и контролируете. Приложение ничего не отправляет в облако. Автоматическое резервное копирование Android может восстановить данные через Google (зашифровано, управляется системой).</p>
 <h2>Удаление</h2>
-<p>Удалите данные в Настройках или удалением приложения. Без серверов удаление полное и мгновенное.</p>
+<p>Удалите данные в Настройках или удалением приложения. Локальное удаление не удаляет уже сохранённые в Google Cloud анонимные счётчики использования ИИ; срок их хранения определяется настройками Firestore.</p>
 <h2>Изменения и контакты</h2>
 <p>Изменения публикуются на этой странице и в репозитории проекта. По вопросам откройте issue в репозитории.</p>`,
 tr: `<h1>Gizlilik Politikası — FitCoach</h1>
 <p><em>Son güncelleme: Kasım 2026</em></p>
 <h2>Özet</h2>
-<p>FitCoach <strong>yerel öncelikli</strong> bir antrenman uygulamasıdır: profil, planlar, geçmiş ve tercihler <strong>yalnızca cihazınızda</strong> (IndexedDB) saklanır. Sunucu, hesap, analitik ve reklam yoktur.</p>
+<p>FitCoach <strong>yerel öncelikli</strong> bir antrenman uygulamasıdır: profil, planlar, geçmiş ve tercihler <strong>yalnızca cihazınızda</strong> (IndexedDB) saklanır. Hesap gerekmez; isteğe bağlı paylaşılan yapay zekâ aşağıda açıklandığı gibi Google Cloud kullanır. Analitik ve reklam yoktur.</p>
 <h2>Saklanan veriler (yerel)</h2>
 <ul>
 <li><strong>Profil:</strong> yaş, cinsiyet, boy, kilo, hedef, seviye, antrenman günleri, ekipman, sakatlıklar.</li>
@@ -223,18 +247,21 @@ tr: `<h1>Gizlilik Politikası — FitCoach</h1>
 <p><strong>AI sağlayıcıları (isteğe bağlı):</strong> bir API anahtarı (OpenRouter veya GLM) yapılandırırsanız, uygulama seçtiğiniz sağlayıcıya yalnızca asgari bağlam gönderir: hedef, seviye, günler ve ekipman; geçmiş ve sakatlıklar yalnızca Ayarlar'da açık onay verirseniz dahil edilir. Anahtarlar yerel olarak saklanır.</p>
 <p><strong>YouTube (isteğe bağlı):</strong> egzersiz kartları, youtube-nocookie.com ve YouTube Data API üzerinden teknik videoları oynatabilir. İstek yalnızca kartı açıp oynata bastığınızda yapılır.</p>
 <p><strong>Egzersiz kataloğu:</strong> egzersiz verileri ve yerel olarak paketlenmiş teknik videolar free-exercise-db'den (MIT lisansı) gelir. Uygulama bu servislere veri göndermez.</p>
+<h2>Health Connect ve Strava (isteğe bağlı)</h2>
+<p>FitCoach yalnızca "Sağlık verilerini oku" düğmesine basıp izin verdiğinizde Health Connect'ten son 29 günün kilosunu ve antrenmanlarını okur (rota ve nabız değil). En güncel kilo profil için önerilir, onay olmadan uygulanmaz. Kardiyo dakikaları, tarih ve kaynak yerel kalır, JSON yedeğine girer; yalnızca bu haftanın kardiyosunu ayarlar, güç gelişimini ve gelecek planları değiştirmez. İzinleri Android'den geri alabilir, verileri FitCoach'tan silebilirsiniz. Saatler ve Strava yalnızca kendi uygulamaları Health Connect'e veri paylaşıyorsa katkı sağlar; Strava yalnızca GPS etkinliklerini paylaşabilir. FitCoach Strava kimlik bilgilerini almaz.</p>
+<p><strong>İsteğe bağlı paylaşılan yapay zekâ (Google Cloud):</strong> proxy kuruluysa gönderdiğiniz sorular oradan AI sağlayıcısına gider. Firestore rastgele kurulum kimliği ve günlük kullanım sayaçlarını saklar, soru metnini değil. Kendi API anahtarınız FitCoach sınırlarına tabi değildir ve paylaşılan proxy'yi kullanmaz. Health Connect kayıtları otomatik olarak AI'a gönderilmez; profil yalnızca gizlilik tercihlerinize göre paylaşılır.</p>
 <h2>Analitik ve izleme</h2>
 <p><strong>Yok.</strong> Analitik, reklam veya izleme SDK'sı bulunmaz.</p>
 <h2>Yedeklemeler</h2>
 <p>Dışa/içe aktarma, sizin oluşturduğunuz ve kontrol ettiğiniz dosyalarla yapılır. Uygulama buluta hiçbir şey göndermez. Android’in otomatik yedeklemesi verileri Google aracılığıyla geri yükleyebilir (şifreli, sistem yönetimli).</p>
 <h2>Silme</h2>
-<p>Verilerinizi Ayarlar'dan veya uygulamayı kaldırarak silin. Sunucu olmadığı için silme tam ve anlıktır.</p>
+<p>Verilerinizi Ayarlar'dan veya uygulamayı kaldırarak silin. Yerel silme, Google Cloud'da önceden tutulan anonim paylaşılan yapay zekâ kullanım sayaçlarını silmez; Firestore saklama kuralına göre süreleri dolar.</p>
 <h2>Değişiklikler ve iletişim</h2>
 <p>Değişiklikler bu sayfada ve proje deposunda yayınlanır. Sorular için depoda bir konu açın.</p>`,
 zh: `<h1>隐私政策 — FitCoach</h1>
 <p><em>最后更新：2026年11月</em></p>
 <h2>概述</h2>
-<p>FitCoach 是一款<strong>本地优先</strong>的训练应用：个人资料、计划、历史记录和偏好设置<strong>仅存储在您的设备上</strong>（IndexedDB）。无服务器、无账户、无分析、无广告。</p>
+<p>FitCoach 是一款<strong>本地优先</strong>的训练应用：个人资料、计划、历史记录和偏好设置<strong>仅存储在您的设备上</strong>（IndexedDB）。无需账户；可选的共享 AI 使用下述 Google Cloud。无分析或广告。</p>
 <h2>存储的数据（本地）</h2>
 <ul>
 <li><strong>个人资料：</strong>年龄、性别、身高、体重、目标、水平、训练日、器械、伤病。</li>
@@ -246,12 +273,15 @@ zh: `<h1>隐私政策 — FitCoach</h1>
 <p><strong>AI 提供商（可选）：</strong>如果您配置了 API 密钥（OpenRouter 或 GLM），应用仅向所选提供商发送最小化上下文：目标、水平、天数和器械；历史记录和伤病仅在您在设置中明确同意时才会包含。密钥存储在本地。</p>
 <p><strong>YouTube（按需）：</strong>练习详情可通过 youtube-nocookie.com 和 YouTube Data API 播放技术视频。仅在您打开详情并点击播放时才发出请求。</p>
 <p><strong>练习目录：</strong>练习数据和本地打包的技术视频来自 free-exercise-db（MIT 许可）。应用不向这些服务发送数据。</p>
+<h2>Health Connect 与 Strava（可选）</h2>
+<p>仅当您点击“读取健康数据”并授权后，FitCoach 才会读取 Health Connect 过去29天的体重及运动记录（不读取路线或心率）。最新体重仅作为更新个人资料的建议，未经确认绝不修改。有氧活动的时长、日期及来源仅存储在设备上，包含在 JSON 备份中，仅调整本周有氧训练，不影响力量进度或未来计划。您可以在 Android 撤销权限，在 FitCoach 删除数据。手表和 Strava 只有在各自应用向 Health Connect 共享数据时才提供记录；Strava 可能仅共享 GPS 活动。FitCoach 不接收您的 Strava 登录凭据。</p>
+<p><strong>可选共享 AI（Google Cloud）：</strong>配置代理后，您发送的问题通过代理传至 AI 服务商。Firestore 仅存储随机安装标识及每日使用计数，不存储问题文本。自有 API 密钥不受 FitCoach 使用次数限制，也不使用共享代理。Health Connect 的记录不会自动发送至 AI；个人资料是否发送取决于您的隐私设置。</p>
 <h2>分析与追踪</h2>
 <p><strong>无。</strong>无任何分析、广告或追踪 SDK。</p>
 <h2>备份</h2>
 <p>导出/导入通过您生成和控制的文件进行。应用不会向云端上传任何内容。 Android 自动备份可通过 Google 恢复应用数据（加密，由系统管理）。</p>
 <h2>删除</h2>
-<p>可在设置中或卸载应用来删除数据。由于没有服务器，删除是完全且即时的。</p>
+<p>可在设置中或卸载应用来删除数据。本地删除不会删除 Google Cloud 中已存储的共享 AI 匿名使用计数；它们依 Firestore 保留规则到期。</p>
 <h2>变更与联系</h2>
 <p>变更将发布在本页面和项目仓库中。如有疑问请在仓库中提交 issue。</p>`,
 };
